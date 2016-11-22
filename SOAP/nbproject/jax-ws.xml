@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="Catalog_WS">
+      <implementation-class>manasik.marketplace.Catalog_WS</implementation-class>
+    </service>
+    <service name="YourProduct_WS">
+      <implementation-class>manasik.marketplace.YourProduct_WS</implementation-class>
+    </service>
+    <service name="Sales_WS">
+      <implementation-class>manasik.marketplace.Sales_WS</implementation-class>
+    </service>
+    <service name="AddProduct_WS">
+      <implementation-class>manasik.marketplace.AddProduct_WS</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

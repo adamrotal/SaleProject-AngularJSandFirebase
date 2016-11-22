@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8081/SOAP/Catalog_WS?wsdl" uri="wsdl/localhost_8081/SOAP/Catalog_WS.wsdl"/>
+    <system systemId="http://localhost:8081/SOAP/Catalog_WS?xsd=1" uri="wsdl/localhost_8081/SOAP/Catalog_WS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/SOAP/YourProduct_WS?wsdl" uri="wsdl/localhost_8081/SOAP/YourProduct_WS.wsdl"/>
+    <system systemId="http://localhost:8081/SOAP/YourProduct_WS?xsd=1" uri="wsdl/localhost_8081/SOAP/YourProduct_WS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/SOAP/Sales_WS?wsdl" uri="wsdl/localhost_8081/SOAP/Sales_WS.wsdl"/>
+    <system systemId="http://localhost:8081/SOAP/Sales_WS?xsd=1" uri="wsdl/localhost_8081/SOAP/Sales_WS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/SOAP/AddProduct_WS?wsdl" uri="wsdl/localhost_8081/SOAP/AddProduct_WS.wsdl"/>
+    <system systemId="http://localhost:8081/SOAP/AddProduct_WS?xsd=1" uri="wsdl/localhost_8081/SOAP/AddProduct_WS.xsd_1.xsd"/>
+</catalog>

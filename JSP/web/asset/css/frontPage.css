@@ -1,0 +1,116 @@
+body{
+	font-family: 'Raleway',sans-serif;
+}
+
+.container{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	height: 100%;
+	width: 100%;
+	padding-left: 20%;
+	padding-top: 5%;
+	padding-right: 20%;
+	overflow: hidden;
+}
+
+hr{
+	margin-bottom: 30px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+input[type="text"],input[type="password"]{
+	width: 97%;
+	margin-bottom: 30px;
+	margin-top: 5px;
+	height: 27px;
+	border-radius: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: white;
+	border: solid black 1px;
+}
+
+textarea {
+	width: 97%;
+	height: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 30px;
+	margin-top: 5px;
+	background-color: white;
+	border: solid black 1px;
+}
+
+input[type="submit"]{
+	border-radius: 0px;
+	height: 40px;
+	width: 80px;
+	border: 0px;
+	color: white;
+	background-color: #0066B4;
+	float: right;
+}
+
+input[type="submit"]:hover{
+	background-color: #A30000;
+}
+
+a{
+	text-decoration: none;
+}
+
+hr{
+	border: solid black 1px;
+}
+
+.logo{
+	font-size: 400%;
+	font-weight: bold;
+	letter-spacing: 3px;
+	margin-bottom: 70px;
+	margin-top: -10px;
+}
+
+.sale {
+	color: #0066B4;
+}
+
+.project {
+	color: #A30000;
+}
+
+.btnHere {
+	text-decoration: none;
+	color: #0066B4;
+}
+
+.tooltip {
+	visibility: hidden;
+    display: inline-block;
+    background-color: red;
+    opacity: 0.7;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 5px 3px 5px;
+    font-size: 12px;
+    margin-left: 10px;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.validateInputElemen{
+	border : red solid 1px !important;
+}
+
+.visibleTooltip{
+	visibility: visible !important;
+}
+
+.validationInput {
+	position: relative;
+}

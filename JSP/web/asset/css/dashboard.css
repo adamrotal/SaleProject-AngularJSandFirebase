@@ -1,0 +1,429 @@
+input[type="submit"]{
+	border-radius: 0px;
+	height: 40px;
+	width: 100px;
+	border: 0px;
+	color: white;
+	background-color: #0066B4;
+	float: right;
+	margin-left: 20px;
+}
+
+
+input[type="submit"]:hover{
+	background-color: #A30000;
+}
+
+body{
+	font-family: 'Raleway',sans-serif;
+}
+
+.container{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	height: 100%;
+	width: 100%;
+	padding-left: 15%;
+	padding-top: 5%;
+	padding-right: 15%;
+	overflow: hidden;
+}
+
+hr{
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border: solid black 1px;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+ul.navig {
+    list-style-type: none;
+    margin-bottom: 30px;
+    padding: 0;
+    overflow: auto;
+    background-color: transparent;
+    
+}
+
+ul.navig li {
+	width: 19.5%;
+    float: left;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    border-right: 0px;
+}
+
+ul.navig li:last-child {
+    border-right: 2px solid black;
+
+}
+	
+
+ul.navig li a {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+
+ul.navig li a:hover:not(.active) {
+	background-color: #0066B4;
+	color: white;
+}
+
+ul.navig li a.active {
+	background-color: #0066B4;
+	color: white;
+}	
+
+.logo{
+	font-size: 400%;
+	font-weight: bold;
+	letter-spacing: 3px;
+	margin-bottom: 70px;
+	margin-top: -10px;
+}
+
+.sale {
+	color: #0066B4;
+}
+
+.project {
+	color: #A30000;
+}
+
+.product{
+	margin-right: 40px
+}
+
+.price{
+	margin-right: 60px
+}
+
+.qual{
+	margin-right: 35px
+}
+
+#quantity {
+	text-align: right;
+	width: 50px;
+}
+
+.totalprice{
+	margin-right: 20px
+}
+
+.del{
+	margin-right: 15px
+}
+
+input[type="text"]{
+	width: 90%;
+	margin-bottom: 10px;
+	margin-top: 0px;
+	height: 40px;
+	border: solid black 0px;
+	background-color: #E1E1E1; 
+	padding-left: 10px;
+	float: left;
+	vertical-align: top;
+}
+
+input[type="longtext"]{
+	width: 90%;
+	margin-bottom: 10px;
+	margin-top: 0px;
+	height: 70px;
+	border: solid black 0px;
+	background-color: #E1E1E1; 
+	padding-left: 10px;
+	float: left;
+	vertical-align: top;
+}
+
+input[type="qual"]{
+	width: 5%;
+	margin-top: 0px;
+	height: 20px;
+	border: solid black 0px;
+	background-color: #E1E1E1; 
+	padding-left: 10px;
+}
+
+input[type="button"]{
+	border-radius: 0px;
+}
+
+input[type="file"]{
+	margin-top: 10px;
+}
+
+#searching{
+	border-radius: 0px;
+	height: 40px;
+	width: 55px;
+	border: 0px;
+	color: white;
+	background-color: #0066B4;
+	margin-left: 10px;
+}
+
+#searching:hover {
+	background-color: #A30000;
+}
+
+.searchbox {
+	margin-top: 50px;
+	overflow: auto;
+}
+
+.byRadio {
+	overflow: auto;
+	margin-left: 20px;
+}
+
+#by {
+	float: left;
+}
+
+#radioButton {
+	margin-left: 30px;
+}
+
+#userLogOut{
+	text-align: right;
+	margin-bottom: 30px;
+}
+
+#logoutButton {
+	text-decoration: none;
+	color: #A30000;
+}
+
+#radio {
+	text-align: left;
+	height: 100%;
+	width: 30%;
+	vertical-align: bottom;
+	padding-left: 10px;
+}
+
+.catalog, .sales, .purchases, .detailProduct {
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+.fotoProduk {
+	height: 100px;
+	width: 100px;
+}
+
+#produk {
+	width: 100%;
+}
+
+#foto {
+	width: 20%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#deskripsi {
+	width: 50%;
+	padding-right: 50px;
+	text-align: justify;
+}
+
+#data {
+	text-align: left;
+	width: 20%;
+}
+
+#dataPurchase, #dataSales {
+	text-align: left;
+	width: 40%;
+	vertical-align: top;
+}
+
+.likeButton {
+	border-radius: 0px;
+	height: 40px;
+	width: 55px;
+	border: 0px;
+	border-radius: 0px;
+	color: blue;
+	font-weight: bold;
+	margin-right: 10px;
+	background-color: transparent;
+}
+
+#buyButton {
+	border-radius: 0px;
+	height: 40px;
+	width: 55px;
+	border: 0px;
+	border-radius: 0px;
+	color: green;
+	font-weight: bold;
+	margin-left: 10px;
+	background-color: transparent;
+}
+
+.likeButton:hover {
+	color: #A30000;
+}
+
+#buyButton:hover {
+	color: #A30000;
+}
+
+
+input#name, input#price, input#consignee, input#address,
+input#postal, input#phone, input#credit, input#verification {
+	width: 99%;
+	height: 30px;
+	padding-left: 10px;
+	font-size: 18px;
+	margin-bottom: 30px;
+	margin-top: 5px;
+	background-color: white;
+	border: solid black 1px;
+}
+
+textarea#description, textarea#address {
+	width: 99%;
+	height: 90px;
+	padding-left: 10px;
+	margin-top: 5px;
+	font: inherit;
+	font-weight: bold;
+	margin-bottom: 30px;
+	border: solid black 1px;
+}
+
+button[type="submit"], button[type="button"], #btnConfirm, #btnCancel{
+	border-radius: 0px;
+	height: 40px;
+	width: 100px;
+	border: 0px;
+	color: white;
+	background-color: #0066B4;
+	margin-left: 20px;
+	float: right;
+}
+
+button[type="submit"]:hover, button[type="button"]:hover, #btnConfirm:hover, #btnCancel:hover{
+	background-color: #A30000;
+}
+
+#editButton {
+	color: #e8a31b;
+	border-radius: 0px;
+	height: 40px;
+	width: 55px;
+	border: 0px;
+	border-radius: 0px;
+	font-weight: bold;
+	margin-right: 10px;
+	background-color: transparent;
+}
+
+#deleteButton {
+	border-radius: 0px;
+	height: 40px;
+	width: 55px;
+	border: 0px;
+	border-radius: 0px;
+	font-weight: bold;
+	margin-right: 10px;
+	background-color: transparent;
+	color: #ce0e08;
+}
+
+.remainder {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.tooltip {
+	visibility: hidden;
+    display: inline-block;
+    background-color: red;
+    color: #fff;
+    opacity: 0.7;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 5px 3px 5px;
+    font-size: 12px;
+    margin-left: 10px;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.validationInput {
+	position: relative;
+}
+
+.validateInputElemen{
+	border : red solid 1px !important;
+}
+
+.visibleTooltip{
+	visibility: visible !important;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* The Close Button */
+.btnYesModal, .btnNoModal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.btnYesModal:hover, .btnYesModal:focus, .btnNoModal:hover, .btnNoModal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dislikeButton{
+	color: red !important;
+}
+
+.idProdukData{
+	visibility: hidden;
+	position: absolute;
+}
