@@ -3,7 +3,7 @@
 <% String keyword = (String) request.getAttribute("keyword"); %>
 <% String category = (String) request.getAttribute("category"); %>
 <!DOCTYPE html>
-<html>
+<html ng-app="chatApp">
 <head>
 	<title>Catalog</title>
 	<link rel="stylesheet" type="text/css" href="asset/css/dashboard.css">
@@ -11,9 +11,49 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         
+        <script type="text/javascript" src="asset/js/angular.min.js"></script>
+        <script type="text/javascript" src="asset/js/chat.js"></script>
+        <script type="text/javascript" src="asset/js/ng-chat.js"></script>
+        
 	
 </head>
 <body ng-controller="chatCtrl">
+        <div class="chatbox" ng-show="chatShow">
+            <div class="chatheader">
+                    <span class="user-status online"></span>
+                    <b>Adam Rotal</b>
+                    <button class="close" ng-click="chatShow=!chatShow">&#10006;</button>
+            </div>
+
+            <div class="chatlogs">
+
+                    <div class="chat friend">
+                            <!-- <div class="user-photo"></div> -->
+                                    <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+
+                    <div class="chat self">
+                            <!-- <div class="user-photo"></div> -->
+                                    <p class="chat-message">Whats'up mamen!</p>
+                    </div>
+
+                    <div class="chat friend">
+                            <!-- <div class="user-photo"></div> -->
+                                    <p class="chat-message">Whats'up mamen!</p>
+                    </div>
+
+                    <div class="chat self">
+                            <!-- <div class="user-photo"></div> -->
+                                    <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+
+            </div>
+
+            <div class="chat-form">
+                    <textarea placeholder="Please enter a message."></textarea>
+                    <button>send</button>
+            </div>
+        </div>
 	<div class="container">
 		<center>
 			<h1 class="logo">
@@ -47,6 +87,7 @@
 			</div>	
 		</form>
 		
+                                        
                 <%
                     List<Map<String,String>> listProduct =(List<Map<String,String>>) request.getAttribute("listCatalog");
                     for(Map<String,String> product : listProduct){
@@ -83,45 +124,5 @@
                     }
                 %>
                 
-                <div class="chatbox" ng-show="chatShow">
-                    <div class="chatheader">
-                            <span class="user-status online"></span>
-                            Adam Rotal
-                            <button class="close" ng-click="chatShow=!chatShow">&#10006;</button>
-                    </div>
-
-                    <div class="chatlogs">
-
-                            <div class="chat friend">
-                                    <!-- <div class="user-photo"></div> -->
-                                            <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-
-                            <div class="chat self">
-                                    <!-- <div class="user-photo"></div> -->
-                                            <p class="chat-message">Whats'up mamen!</p>
-                            </div>
-
-                            <div class="chat friend">
-                                    <!-- <div class="user-photo"></div> -->
-                                            <p class="chat-message">Whats'up mamen!</p>
-                            </div>
-
-                            <div class="chat self">
-                                    <!-- <div class="user-photo"></div> -->
-                                            <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-
-                    </div>
-
-                    <div class="chat-form">
-                            <textarea placeholder="Please enter a message."></textarea>
-                            <button>send</button>
-                    </div>
-                </div>
 	</div>
-                
-        <script src="asset/js/angular.min.js"></script>
-        <script src="asset/js/chat.js"></script>
-</body>
 </html>

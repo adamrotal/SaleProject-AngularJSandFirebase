@@ -18,19 +18,25 @@
 }
 
 .chatbox {
-  width: 500px;
-  min-width: 390px;
+  width: 350px;
+  min-width: 350px;
   height: auto;
   background: #fff;
-  padding: 0 0 25px 0;
-  margin: 20px auto;
+  padding: 0 0 10px 0;
+  margin: auto;
+  right: 0;
+  bottom: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
   box-shadow: 0 3px #ccc;
+  border: 2px solid #ccc;
+  position: fixed;
   
 }
 
 .chatlogs {
   width: 100%;
-  height: 450px;
+  height: 280px;
   /*padding: 10px;*/
   overflow-x: hidden;
   overflow-y: scroll;
@@ -45,6 +51,8 @@
   /*flex-flow: row wrap;*/
   /*align-items: flex-start;*/
   margin-bottom: 10px;
+  line-height: 15.3667px;
+  font-family: sans-serif;
 }
 
 .chat .user-photo {
@@ -63,7 +71,7 @@
   background: #1ddced;
   border-radius: 10px;
   color: #fff;
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .friend .chat-message {
@@ -78,7 +86,7 @@
 
 .self .chat-message {
   background: #005eff;
-  text-align: right;
+  text-align: left;
   float: right;
   clear: left;
   color: white;
@@ -102,13 +110,14 @@
 .chat-form textarea {
   background: #fbfbfb;
   width: 100%;
-  min-height: 34px;
+  height: 22px;
+  /*min-height: 34px;*/
   border: 2px solid #eee;
   border-radius: 3px;
   resize: none;
   margin-left: 10px;
   padding: 10px;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .chat-form textarea:focus {
@@ -118,7 +127,7 @@
 .chat-form button {
   background: #1ddced;
   padding: 5px 10px;
-  font-size: 20px;
+  font-size: 11px;
   color: white;
   border: none;
   margin: 0 10px;
@@ -137,8 +146,9 @@
 .chatheader {
   display: block;
   background: #065080;
-  padding: 20px;
+  padding: 10px;
   color: white;
+  font-size: 14px;
 }
 
 .close {
