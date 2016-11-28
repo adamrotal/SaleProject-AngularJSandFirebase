@@ -21,7 +21,7 @@
         <div class="chatbox" ng-show="chatShow">
             <div class="chatheader">
                     <span class="user-status online"></span>
-                    <b>Adam Rotal</b>
+                    <b>{{ usrname }}</b>
                     <button class="close" ng-click="chatShow=!chatShow">&#10006;</button>
             </div>
 
@@ -94,7 +94,7 @@
                 %>
                     <div class="catalog">
 			<span class="user-status offline"></span>
-                        <a class="username" ng-click="chatShow=!chatShow" href="javascript:void(0);"><b><% out.print(product.get("usernamePenjual"));%></b></a><br>
+                        <a class="username" ng-click="chatShow=!chatShow" ng-init="usrname = '<% out.print(product.get("usernamePenjual"));%>'" ng-model="usernameChat=this" href="javascript:void(0);"><b><% out.print(product.get("usernamePenjual"));%></b></a><br>
 			added this on <% out.print(product.get("tanggalDiTambah"));%><br>
 			<hr>
 			<table id="produk"  cellpadding="10">
