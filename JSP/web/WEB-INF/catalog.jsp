@@ -52,8 +52,8 @@
                     for(Map<String,String> product : listProduct){
                 %>
                     <div class="catalog">
-			<span class="user-status online"></span>
-                        <a ng-click="chatShow=!chatShow"><b><% out.print(product.get("usernamePenjual"));%></b></a><br>
+			<span class="user-status offline"></span>
+                        <a class="username" ng-click="chatShow=!chatShow" href="javascript:void(0);"><b><% out.print(product.get("usernamePenjual"));%></b></a><br>
 			added this on <% out.print(product.get("tanggalDiTambah"));%><br>
 			<hr>
 			<table id="produk"  cellpadding="10">

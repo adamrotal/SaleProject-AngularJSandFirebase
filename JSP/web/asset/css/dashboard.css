@@ -428,6 +428,10 @@ button[type="submit"]:hover, button[type="button"]:hover, #btnConfirm:hover, #bt
 	position: absolute;
 }
 
+.username {
+    color: black;
+}
+
 .user-status {
   display: inline-block;
   border-radius: 50%;
