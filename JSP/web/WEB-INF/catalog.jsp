@@ -9,9 +9,11 @@
 	<link rel="stylesheet" type="text/css" href="asset/css/dashboard.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="asset/js/angular.min.js"></script>
+        <script type="text/javascript" src="asset/js/chat.js"></script>
 	
 </head>
-<body>
+<body ng-controller="chatCtrl">
 	<div class="container">
 		<center>
 			<h1 class="logo">
@@ -50,7 +52,8 @@
                     for(Map<String,String> product : listProduct){
                 %>
                     <div class="catalog">
-			<b><% out.print(product.get("usernamePenjual"));%></b><br>
+			<span class="user-status online"></span>
+                        <a ng-click="chatShow=!chatShow"><b><% out.print(product.get("usernamePenjual"));%></b></a><br>
 			added this on <% out.print(product.get("tanggalDiTambah"));%><br>
 			<hr>
 			<table id="produk"  cellpadding="10">

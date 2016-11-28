@@ -427,3 +427,151 @@ button[type="submit"]:hover, button[type="button"]:hover, #btnConfirm:hover, #bt
 	visibility: hidden;
 	position: absolute;
 }
+
+.user-status {
+  display: inline-block;
+  border-radius: 50%;
+  height: 6px;
+  margin: 0 3px 1px 0;
+  vertical-align: middle;
+  width: 6px;
+}
+.offline {
+  background: red;
+}
+.online {
+  background: green;
+}
+
+.chatbox {
+  width: 500px;
+  min-width: 390px;
+  height: auto;
+  background: #fff;
+  padding: 0 0 25px 0;
+  margin: 20px auto;
+  box-shadow: 0 3px #ccc;
+}
+
+.chatlogs {
+  width: 100%;
+  height: 450px;
+  /*padding: 10px;*/
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.chatlogs::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat {
+  /*display: flex;*/
+  /*flex-flow: row wrap;*/
+  /*align-items: flex-start;*/
+  margin-bottom: 10px;
+}
+
+.chat .user-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  /*display: none;*/
+}
+
+.chat .chat-message {
+  width: auto;
+
+  padding: 15px;
+  margin: 5px 10px 10px 10px;
+  background: #1ddced;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.friend .chat-message {
+  background: #e4e0e0;
+  color: black;
+  text-align: left;
+  float: left;
+  clear: right;
+  order: -1;
+  margin-right: 75px;
+}
+
+.self .chat-message {
+  background: #005eff;
+  text-align: right;
+  float: right;
+  clear: left;
+  color: white;
+  margin-left: 75px;
+}
+
+.friend .chat-message:before {
+  border-bottom: 10px solid #000;
+  border-left: 9px solid rgba(0, 0, 0, 0);
+  position: absolute;
+  bottom: 0;
+  left: -8px;
+  content: "";
+}
+
+.chat-form{
+  margin-top: 20px;
+  display: flex;
+}
+
+.chat-form textarea {
+  background: #fbfbfb;
+  width: 100%;
+  min-height: 34px;
+  border: 2px solid #eee;
+  border-radius: 3px;
+  resize: none;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.chat-form textarea:focus {
+  background: #fff;
+}
+
+.chat-form button {
+  background: #1ddced;
+  padding: 5px 10px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  margin: 0 10px;
+  border-radius: 3px;
+  box-shadow: 0 3px 0 #0eb2c1;
+
+  -webkit-transition: background .2s ease;
+  -moz-transition: background .2s ease;
+  -o-transition: background .2s ease;
+}
+
+.chat-form button:hover {
+  background: #13c8d9;
+}
+
+.chatheader {
+  display: block;
+  background: #065080;
+  padding: 20px;
+  color: white;
+}
+
+.close {
+  background-color: transparent;
+  border: 0;
+  float: right;
+  color: white;
+}
+.close:hover {
+  color: red;
+}
