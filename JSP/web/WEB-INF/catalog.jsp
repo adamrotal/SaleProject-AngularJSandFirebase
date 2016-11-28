@@ -7,6 +7,7 @@
 <head>
 	<title>Catalog</title>
 	<link rel="stylesheet" type="text/css" href="asset/css/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/chat.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         
