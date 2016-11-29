@@ -6,6 +6,7 @@
 package com.rest;
 
 // import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.Random;
@@ -30,7 +31,7 @@ public class TokenGenerator {
         Database.addTimeToken(token,ms);
     }
     
-    static public boolean isValidToken(String token) throws ClassNotFoundException, SQLException {
+    static public ResultSet isValidToken(String token) throws ClassNotFoundException, SQLException {
         
         return Database.isValid(token);
     }
@@ -47,7 +48,7 @@ public class TokenGenerator {
                 ind = rand.nextInt(seed.length()-1);
                 token = token + seed.charAt(ind);
             }
-        } while (isValidToken(token));
+        } while (isValidToken(token).next());
         
         Date date = new Date();
         long ms;

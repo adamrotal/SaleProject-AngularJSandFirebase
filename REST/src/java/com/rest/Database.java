@@ -78,16 +78,15 @@ public class Database {
         updateToDb(sql);
     }
     
-    static public boolean isValid(String token) throws ClassNotFoundException, SQLException {
+    static public ResultSet isValid(String token) throws ClassNotFoundException, SQLException {
         String sql;
         java.util.Date date = new java.util.Date();
-        long ms;
-        ms = date.getTime();
+        String tokenString[] = token.split("#");
         
-        sql = "SELECT * FROM user WHERE token='"+token+"' AND tanggalEXP > "+ms;
+        sql = "SELECT * FROM user WHERE token LIKE '"+tokenString[0]+"%'";
         ResultSet resultSet = selectFromDb(sql);
         
-        return resultSet.next();
+        return resultSet;
     }
     
     static public void addTimeToken(String token, long waktu) throws ClassNotFoundException, SQLException {

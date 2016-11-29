@@ -7,6 +7,7 @@ package com.rest;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -81,8 +82,8 @@ public class RESTToken extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         try {
-            boolean valid = TokenGenerator.isValidToken(token);
-            if(valid) {
+            ResultSet resultSet = TokenGenerator.isValidToken(token);
+            if(resultSet.next()) {
                 TokenGenerator.addTimeToken(token);
                 out.print("true");
             } else {
