@@ -105,15 +105,21 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String userAgent = request.getHeader("User-Agent");
+        String ipAddress = request.getHeader("X-FORWARDED-FOR");
+        if (ipAddress == null) {
+	   ipAddress = request.getRemoteAddr();
+        }
+        
         HttpSession session = request.getSession();
 
         String urlParameters;
         String urlTarget;
-        urlParameters = "email=" + URLEncoder.encode(email, "UTF-8") + "&password=" + URLEncoder.encode(password, "UTF-8");
+        urlParameters = "email=" + URLEncoder.encode(email, "UTF-8") + "&password=" + URLEncoder.encode(password, "UTF-8") + "&userAgent=" + URLEncoder.encode(userAgent, "UTF-8") + "&ipAddress=" + URLEncoder.encode(ipAddress, "UTF-8");
         urlTarget = GeneralConstant.getURLRest("/RESTLogin");
         
         String result = DoHttpRequest.executePost(urlTarget,urlParameters);
-        System.out.print("aaa");
+        
         if(result.equals("false")) {
             session.invalidate();
             response.sendRedirect("/JSP/Login");

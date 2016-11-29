@@ -78,15 +78,21 @@ public class RESTLogin extends HttpServlet {
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String userAgent = request.getParameter("userAgent");
+        String ipAddress = request.getParameter("ipAddress");
         response.setContentType("text/plain");
         response.setCharacterEncoding("utf-8");
         PrintWriter out = response.getWriter();
-        
+        System.out.println(email);
+        System.out.println(password);
+        System.out.println(userAgent);
+        System.out.println(ipAddress);
         
         try {
             if(Database.login(email,password)) {
                 String tokenString;
-                tokenString = TokenGenerator.generateToken(email);
+                tokenString = TokenGenerator.generateToken(email,ipAddress,userAgent);
+                System.out.println(tokenString);
                 out.print(tokenString);
             } else {
                 out.print("false");

@@ -105,13 +105,18 @@ public class Register extends HttpServlet {
         String username = request.getParameter("username");
         System.out.println("email");
         String email = request.getParameter("email");
+        String userAgent = request.getHeader("User-Agent");
+        String ipAddress = request.getHeader("X-FORWARDED-FOR");
+        if (ipAddress == null) {
+	   ipAddress = request.getRemoteAddr();
+        }
         
         HttpSession session = request.getSession();
 
         String urlParameters;
         String urlTarget;
         
-        urlParameters = "email=" + URLEncoder.encode(email, "UTF-8") + "&password=" + URLEncoder.encode(password, "UTF-8")+ "&fullName=" + URLEncoder.encode(fullName, "UTF-8")+ "&fullAddress=" + URLEncoder.encode(fullAddress, "UTF-8")+ "&postalCode=" + URLEncoder.encode(postalCode, "UTF-8")+ "&phoneNumber=" + URLEncoder.encode(phoneNumber, "UTF-8")+ "&username=" + URLEncoder.encode(username, "UTF-8");
+        urlParameters = "email=" + URLEncoder.encode(email, "UTF-8") + "&password=" + URLEncoder.encode(password, "UTF-8")+ "&fullName=" + URLEncoder.encode(fullName, "UTF-8")+ "&fullAddress=" + URLEncoder.encode(fullAddress, "UTF-8")+ "&postalCode=" + URLEncoder.encode(postalCode, "UTF-8")+ "&phoneNumber=" + URLEncoder.encode(phoneNumber, "UTF-8")+ "&username=" + URLEncoder.encode(username, "UTF-8")+ "&userAgent=" + URLEncoder.encode(userAgent, "UTF-8") + "&ipAddress=" + URLEncoder.encode(ipAddress, "UTF-8");
         
         
         urlTarget = GeneralConstant.getURLRest("/RESTRegister");

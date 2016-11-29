@@ -35,7 +35,7 @@ public class TokenGenerator {
         return Database.isValid(token);
     }
     
-    static public String generateToken(String key) throws ClassNotFoundException, SQLException {
+    static public String generateToken(String key,String ipAddress,String userAgent) throws ClassNotFoundException, SQLException {
         String seed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxz1234567890";
         String token;
         Random rand = new Random();
@@ -53,6 +53,7 @@ public class TokenGenerator {
         long ms;
         ms = date.getTime();
         ms = ms + menitKeMs(EXTRA_TIME);
+        token = token+"#"+userAgent+"#"+ipAddress;
         Database.insertToken(token, ms, key);
         
         

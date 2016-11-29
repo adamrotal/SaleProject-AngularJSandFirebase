@@ -4,18 +4,6 @@
 <xsd:import namespace="http://marketplace.manasik/" schemaLocation="http://localhost:8081/SOAP/Sales_WS?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="buy">
-<part name="parameters" element="tns:buy"/>
-</message>
-<message name="buyResponse">
-<part name="parameters" element="tns:buyResponse"/>
-</message>
-<message name="ClassNotFoundException">
-<part name="fault" element="tns:ClassNotFoundException"/>
-</message>
-<message name="SQLException">
-<part name="fault" element="tns:SQLException"/>
-</message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
 </message>
@@ -28,19 +16,25 @@
 <message name="getListSalesResponse">
 <part name="parameters" element="tns:getListSalesResponse"/>
 </message>
+<message name="ClassNotFoundException">
+<part name="fault" element="tns:ClassNotFoundException"/>
+</message>
+<message name="SQLException">
+<part name="fault" element="tns:SQLException"/>
+</message>
 <message name="getListPurchases">
 <part name="parameters" element="tns:getListPurchases"/>
 </message>
 <message name="getListPurchasesResponse">
 <part name="parameters" element="tns:getListPurchasesResponse"/>
 </message>
+<message name="buy">
+<part name="parameters" element="tns:buy"/>
+</message>
+<message name="buyResponse">
+<part name="parameters" element="tns:buyResponse"/>
+</message>
 <portType name="Sales_WS">
-<operation name="buy">
-<input wsam:Action="http://marketplace.manasik/Sales_WS/buyRequest" message="tns:buy"/>
-<output wsam:Action="http://marketplace.manasik/Sales_WS/buyResponse" message="tns:buyResponse"/>
-<fault message="tns:ClassNotFoundException" name="ClassNotFoundException" wsam:Action="http://marketplace.manasik/Sales_WS/buy/Fault/ClassNotFoundException"/>
-<fault message="tns:SQLException" name="SQLException" wsam:Action="http://marketplace.manasik/Sales_WS/buy/Fault/SQLException"/>
-</operation>
 <operation name="hello">
 <input wsam:Action="http://marketplace.manasik/Sales_WS/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://marketplace.manasik/Sales_WS/helloResponse" message="tns:helloResponse"/>
@@ -57,24 +51,15 @@
 <fault message="tns:ClassNotFoundException" name="ClassNotFoundException" wsam:Action="http://marketplace.manasik/Sales_WS/getListPurchases/Fault/ClassNotFoundException"/>
 <fault message="tns:SQLException" name="SQLException" wsam:Action="http://marketplace.manasik/Sales_WS/getListPurchases/Fault/SQLException"/>
 </operation>
+<operation name="buy">
+<input wsam:Action="http://marketplace.manasik/Sales_WS/buyRequest" message="tns:buy"/>
+<output wsam:Action="http://marketplace.manasik/Sales_WS/buyResponse" message="tns:buyResponse"/>
+<fault message="tns:ClassNotFoundException" name="ClassNotFoundException" wsam:Action="http://marketplace.manasik/Sales_WS/buy/Fault/ClassNotFoundException"/>
+<fault message="tns:SQLException" name="SQLException" wsam:Action="http://marketplace.manasik/Sales_WS/buy/Fault/SQLException"/>
+</operation>
 </portType>
 <binding name="Sales_WSPortBinding" type="tns:Sales_WS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="buy">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-<fault name="ClassNotFoundException">
-<soap:fault name="ClassNotFoundException" use="literal"/>
-</fault>
-<fault name="SQLException">
-<soap:fault name="SQLException" use="literal"/>
-</fault>
-</operation>
 <operation name="hello">
 <soap:operation soapAction=""/>
 <input>
@@ -100,6 +85,21 @@
 </fault>
 </operation>
 <operation name="getListPurchases">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="ClassNotFoundException">
+<soap:fault name="ClassNotFoundException" use="literal"/>
+</fault>
+<fault name="SQLException">
+<soap:fault name="SQLException" use="literal"/>
+</fault>
+</operation>
+<operation name="buy">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

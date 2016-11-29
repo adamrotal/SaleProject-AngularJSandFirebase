@@ -86,14 +86,16 @@ public class RESTRegister extends HttpServlet {
             String phoneNumber = request.getParameter("phoneNumber");
             String username = request.getParameter("username");
             String email = request.getParameter("email");
-            
+            String userAgent = request.getParameter("userAgent");
+            String ipAddress = request.getParameter("ipAddress");
             
             
             if(Database.isExistKey(email) || Database.isExistKey(username)) {
                 out.print("false");
             } else {
                 Database.insertUser(fullName, username, email, password, fullAddress, postalCode, phoneNumber);
-                String token = TokenGenerator.generateToken(email);
+                String token = TokenGenerator.generateToken(email,ipAddress,userAgent);
+                System.out.println(token);
                 out.print(token);
             }
             
