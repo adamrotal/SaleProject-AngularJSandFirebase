@@ -5,10 +5,12 @@
         <link rel="stylesheet" type="text/css" href="asset/css/frontPage.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="asset/js/jquery.js"></script>
         <script type="text/javascript" src="asset/js/javascript.js"></script>
 
 </head>
 <body>
+    <% String message = (String) request.getAttribute("message");%>
 	<div class="container">
 		<center>
 			<h1 class="logo">
@@ -17,6 +19,11 @@
 		</center>
 		<h2>Please Login</h2>
 		<hr>
+                <% if(message != null) { %>
+                <div id="errorMessage">
+                    <% out.print(message); %>
+                </div>
+                <% } %>
                 <form method="post" action="/JSP/Login">
 			<b>Email or Username</b>
 			<span id="requiredLoginEmail" class="tooltip">Required</span><br>

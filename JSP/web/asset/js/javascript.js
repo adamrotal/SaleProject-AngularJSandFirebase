@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+    $( "#errorMessage" ).delay( 2000 ).fadeOut( 1000 );
+});
+
 function countPrice() {
 	var price = document.getElementById('initialPrice').value;
 	var nBuy = document.getElementById('quantity').value;

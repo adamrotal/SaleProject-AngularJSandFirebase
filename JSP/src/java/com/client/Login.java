@@ -80,12 +80,23 @@ public class Login extends HttpServlet {
             String result = DoHttpRequest.executePost(urlTarget,urlParameters);
             if(result.equals("false")) {
                 session.invalidate();
+                String message = request.getParameter("message");
+                if(message == null) {
+                    message = "";
+                }
+                request.setAttribute("message",message);
                 request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
             } else {
                 session.setAttribute("token",result);
+                
                 response.sendRedirect("/JSP/Catalog");
             }
         } else {
+            String message = request.getParameter("message");
+            if(message == null) {
+                message = "";
+            }
+            request.setAttribute("message",message);
             request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }
         
