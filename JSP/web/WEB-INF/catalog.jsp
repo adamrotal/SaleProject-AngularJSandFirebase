@@ -24,29 +24,19 @@
         <div class="chatbox" ng-show="chatShow">
             <div class="chatheader">
                     <span class="user-status online"></span>
-                    <b>{{ usrname }}</b>
+                    <b>{{ username }}</b>
                     <button class="close" ng-click="chatShow=!chatShow">&#10006;</button>
             </div>
 
             <div class="chatlogs" ng-bind-html="chatData">
             </div>
             
-<!--            <form ng-submit="inputChatF = null">
-                <div class="chat-form">
-                    <input type="text" name="msg" ng-model="inputChatF" id="inputChat">
-                    <button class="buttonChat" ng-click="sendF()">send</button>
-                </div>
-            </form>-->
             <form ng-submit="inputChat = null">
                 <div class="chat-form">
                     <input type="text" name="msg" ng-model="inputChat" id="inputChat">
                     <button class="buttonChat" ng-click="send()">send</button>
                 </div>
             </form>
-<!--            <div class="chat-form">
-                    <textarea placeholder="Please enter a message."></textarea>
-                    <button>send</button>
-            </div>-->
         </div>
     
 	<div class="container">
@@ -89,7 +79,7 @@
                 %>
                     <div class="catalog">
 			<span class="user-status offline"></span>
-                        <a class="username" ng-click="chatShow=!chatShow" ng-init="usrname = '{data}'" href="javascript:void(0);"><b><% out.print(product.get("usernamePenjual"));%></b></a><br>
+                        <a class="username" ng-click="clickChat('<% out.print(product.get("usernamePenjual"));%>')" href="javascript:void(0);"><b><% out.print(product.get("usernamePenjual"));%></b></a><br>
 			added this on <% out.print(product.get("tanggalDiTambah"));%><br>
 			<hr>
 			<table id="produk"  cellpadding="10">
