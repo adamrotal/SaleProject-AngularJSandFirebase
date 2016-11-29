@@ -5,6 +5,7 @@ app.controller('chatCtrl', ['$scope','$sce', function ($scope, $sce) {
   $scope.chatData = '';
   $scope.chatShow = false;
   $scope.username = '';
+  $scope.usernameClicked = '';
         
   $scope.send = function() {
       if ($scope.inputChat != null) {
@@ -14,18 +15,15 @@ app.controller('chatCtrl', ['$scope','$sce', function ($scope, $sce) {
       }
   }
   
-  $scope.addusername = function(){
-    $scope.username.push($scope.usrname);
-  }
-  
   $scope.clickChat = function(user) {
-      $scope.chatShow = !$scope.chatShow;
-      $scope.username = user;
+      
+      if ($scope.username == user || $scope.username == '') {
+          $scope.chatShow = !$scope.chatShow;
+          $scope.username = user;
+      } else if (!$scope.chatShow && $scope.username != user){
+          $scope.chatShow = !$scope.chatShow;
+          $scope.username = user;
+      }
   }
   
 }]);
-
-function auto_grow(element) {
-    element.style.height = "34px";
-    element.style.height = (element.scrollHeight)+"px";
-}
