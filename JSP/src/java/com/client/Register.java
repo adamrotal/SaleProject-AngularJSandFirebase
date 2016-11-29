@@ -123,7 +123,37 @@ public class Register extends HttpServlet {
             response.sendRedirect("/JSP/Register");
         } else {
             session.setAttribute("token",result);
-            response.sendRedirect("/JSP/YourProduct");
+            urlParameters = "token=" + URLEncoder.encode(result, "UTF-8");
+            urlTarget = GeneralConstant.getURLRest("/RESTFullName");
+            String fullName1 = DoHttpRequest.executePost(urlTarget,urlParameters);
+            session.setAttribute("fullName",fullName1);
+            System.out.print(fullName);
+            
+            urlTarget = GeneralConstant.getURLRest("/RESTFullAddress");
+            String fullAddress1 = DoHttpRequest.executePost(urlTarget,urlParameters);
+            session.setAttribute("fullAddress",fullAddress1);
+            System.out.print(fullAddress);
+            
+            urlTarget = GeneralConstant.getURLRest("/RESTPostalCode");
+            String postalCode1 = DoHttpRequest.executePost(urlTarget,urlParameters);
+            session.setAttribute("postalCode",postalCode1);
+            System.out.print(postalCode);
+            
+            urlTarget = GeneralConstant.getURLRest("/RESTPhoneNumber");
+            String phoneNumber1 = DoHttpRequest.executePost(urlTarget,urlParameters);
+            session.setAttribute("phoneNumber",phoneNumber1);
+            System.out.print(phoneNumber);
+            
+            urlTarget = GeneralConstant.getURLRest("/RESTIdUser");
+            String idUser1 = DoHttpRequest.executePost(urlTarget,urlParameters);
+            session.setAttribute("idUser",idUser1);
+            System.out.print(idUser1);
+            
+            urlTarget = GeneralConstant.getURLRest("/RESTUser");
+            String username1 = DoHttpRequest.executePost(urlTarget,urlParameters);
+            session.setAttribute("username",username1);
+            System.out.print(username);
+            response.sendRedirect("/JSP/Catalog");
         }
     }
 
