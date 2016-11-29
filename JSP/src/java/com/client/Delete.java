@@ -79,7 +79,19 @@ public class Delete extends HttpServlet {
             String result = DoHttpRequest.executePost(urlTarget,urlParameters);
             if(result.equals("false")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login");
+                response.sendRedirect("/JSP/Login?message=Token is Invalid");
+                return;
+            } else if(result.equals("falseExpired")) {
+                session.invalidate();
+                response.sendRedirect("/JSP/Login?message=Token is Expired");
+                return;
+            } else if(result.equals("falseUserAgnet")) {
+                session.invalidate();
+                response.sendRedirect("/JSP/Login?message=Token have been use in other browser");
+                return;
+            } else if(result.equals("falseIP")) {
+                session.invalidate();
+                response.sendRedirect("/JSP/Login?message=Token have been use in other IP");
                 return;
             }
         } else {

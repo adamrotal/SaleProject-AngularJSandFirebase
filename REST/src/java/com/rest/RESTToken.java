@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -84,8 +85,25 @@ public class RESTToken extends HttpServlet {
         try {
             ResultSet resultSet = TokenGenerator.isValidToken(token);
             if(resultSet.next()) {
-                TokenGenerator.addTimeToken(token);
-                out.print("true");
+                String stringToken = resultSet.getString("token");
+                if(stringToken.equals(token)) {
+                    TokenGenerator.addTimeToken(token);
+                    out.print("true");
+                } else {
+                    Date date = new Date();
+                    long ms;
+                    ms = date.getTime();
+                    long timeInDatabase = resultSet.getLong("tanggalExp");
+                    String param[] = stringToken.split("#");
+                    String param2[] = token.split("#");
+                    if(timeInDatabase < ms) {
+                        out.print("falseExpired");
+                    } else if(!param[1].equals(param2[1])){
+                        out.print("falseUserAgnet");
+                    } else {
+                        out.print("falseIP");
+                    }
+                }
             } else {
                 out.print("false");
             }
