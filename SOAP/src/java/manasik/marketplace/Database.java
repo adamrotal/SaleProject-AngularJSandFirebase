@@ -1,11 +1,13 @@
 package manasik.marketplace;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +19,42 @@ public class Database {
     private static final String PASS = "kuliah";
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     private static Connection connection = null;
+    private static Connection conn2 = null;
+    private static final String URL2 = "jdbc:mysql://localhost:3306/service?zeroDateTimeBehavior=convertToNull";
+    
+    static private void createConnection2() throws ClassNotFoundException, SQLException {
+        Class.forName(JDBC_DRIVER);
+        conn2 = DriverManager.getConnection(URL2, USER, PASS);
+    }
+    
+    static private ResultSet selectFromDb2(String sql) throws ClassNotFoundException, SQLException {
+        // Creating Connection
+        // Class.forName(JDBC_DRIVER);
+        // Connection connection = null;
+        
+        // try{
+        //     connection = DriverManager.getConnection(URL, USER, PASS);
+        //     Statement statement = connection.createStatement();
+        //     ResultSet resultSet = statement.executeQuery(sql);
+        //     return resultSet;
+        // } finally {
+//            if(connection != null)
+//                connection.close();
+//        }
+        
+        if(conn2 == null) {
+            createConnection2();
+        }
+        
+        Statement statement = conn2.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+        return resultSet;
+        // Creating statement
+        
+        
+        
+        
+    }
     
     static private void createConnection() throws ClassNotFoundException, SQLException {
         Class.forName(JDBC_DRIVER);
@@ -24,7 +62,6 @@ public class Database {
     }
     
     static public void updateToDb(String sql) throws ClassNotFoundException, SQLException {
-        
         if(connection == null) {
             createConnection();
         }
@@ -99,10 +136,25 @@ public class Database {
             result.add(String.valueOf(nSales));
             result.add("liked");
             result.add(getLiked(id,resultSet.getString("id")));
-            
+            result.add("online");
+            result.add(getOnline(resultSet.getString("namaPenjual")));
         }
         
         return result;
+    }
+    
+    static public String getOnline(String usr) throws ClassNotFoundException, SQLException {
+        Date date = new Date();
+        long ms = date.getTime();
+        System.out.println("usr");
+        String sql = "SELECT * FROM user WHERE username = '"+usr+"' AND tanggalEXP > "+ms;
+        System.out.println(sql);
+        ResultSet resultSet = selectFromDb2(sql);
+        if(resultSet.next()){
+            return "online";
+        }else{
+            return "offline";
+        }
     }
     
     static public List<String> getListCatalog(String id) throws ClassNotFoundException, SQLException {

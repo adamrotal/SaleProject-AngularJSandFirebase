@@ -7,7 +7,6 @@
       <local-wsdl-file>localhost_8081/SOAP/Catalog_WS.wsdl</local-wsdl-file>
       <package-name>manasik.marketplace</package-name>
       <catalog-file>catalog.xml</catalog-file>
-      <use-dispatch>true</use-dispatch>
       <wsimport-options>
         <wsimport-option>
           <wsimport-option-name>extension</wsimport-option-name>
@@ -40,7 +39,6 @@
       <local-wsdl-file>localhost_8081/SOAP/YourProduct_WS.wsdl</local-wsdl-file>
       <package-name>manasik.marketplace</package-name>
       <catalog-file>catalog.xml</catalog-file>
-      <use-dispatch>true</use-dispatch>
       <wsimport-options>
         <wsimport-option>
           <wsimport-option-name>extension</wsimport-option-name>
@@ -73,7 +71,6 @@
       <local-wsdl-file>localhost_8081/SOAP/Sales_WS.wsdl</local-wsdl-file>
       <package-name>manasik.marketplace</package-name>
       <catalog-file>catalog.xml</catalog-file>
-      <use-dispatch>true</use-dispatch>
       <wsimport-options>
         <wsimport-option>
           <wsimport-option-name>extension</wsimport-option-name>
@@ -106,7 +103,6 @@
       <local-wsdl-file>localhost_8081/SOAP/AddProduct_WS.wsdl</local-wsdl-file>
       <package-name>manasik.marketplace</package-name>
       <catalog-file>catalog.xml</catalog-file>
-      <use-dispatch>true</use-dispatch>
       <wsimport-options>
         <wsimport-option>
           <wsimport-option-name>extension</wsimport-option-name>

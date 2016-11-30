@@ -79,7 +79,8 @@
                     for(Map<String,String> product : listProduct){
                 %>
                     <div class="catalog">
-			<span class="user-status offline"></span>
+                   
+			<span class="user-status <% out.print(product.get("online"));%>"></span>
                         <a class="username" ng-click="clickChat('<% out.print(product.get("usernamePenjual"));%>')" href="javascript:void(0);"><b><% out.print(product.get("usernamePenjual"));%></b></a><br>
 			added this on <% out.print(product.get("tanggalDiTambah"));%><br>
 			<hr>

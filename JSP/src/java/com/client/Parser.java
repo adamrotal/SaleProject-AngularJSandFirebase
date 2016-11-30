@@ -17,14 +17,12 @@ import java.util.Map;
 public class Parser {
     static public List<Map<String,String>> catalogParser(List<String> listString) {
         List<Map<String,String>> listCatalog = new ArrayList<>();
-        int length = listString.size()/20;
+        int length = listString.size()/22;
         for(int i = 0; i < length; i++) {
             Map<String,String> map = new HashMap<>();
             
-            for(int j = 0; j < 10; j++){
-                System.out.println((2*j)+(10*i));
-                System.out.println((10*i)+1+(j*2));
-                map.put(listString.get((2*j)+(20*i)),listString.get((20*i)+1+(j*2)));
+            for(int j = 0; j < 11; j++){
+                map.put(listString.get((2*j)+(22*i)),listString.get((22*i)+1+(j*2)));
             }
             
             
