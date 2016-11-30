@@ -10,7 +10,7 @@ package com.client;
  * @author afp
  */
 public class GeneralConstant {
-    private static final String CLIENT = "http://localhost:8080/JSP";
+    private static final String CLIENT = "http://localhost:8080";
     private static final String REST = "http://localhost:8082/REST";
     private static final String SOAP = "http://localhost:8081/SOAP";
     

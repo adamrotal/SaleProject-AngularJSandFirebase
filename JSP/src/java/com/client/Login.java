@@ -89,7 +89,7 @@ public class Login extends HttpServlet {
             } else {
                 session.setAttribute("token",result);
                 
-                response.sendRedirect("/JSP/Catalog");
+                response.sendRedirect("Catalog");
             }
         } else {
             String message = request.getParameter("message");
@@ -133,7 +133,7 @@ public class Login extends HttpServlet {
         
         if(result.equals("false")) {
             session.invalidate();
-            response.sendRedirect("/JSP/Login");
+            response.sendRedirect("Login");
         } else {
             session.setAttribute("token",result);
             System.out.print(result);
@@ -169,7 +169,7 @@ public class Login extends HttpServlet {
             session.setAttribute("username",username);
             System.out.print(username);
             
-            response.sendRedirect("/JSP/Catalog");
+            response.sendRedirect("Catalog");
         }
         
     }

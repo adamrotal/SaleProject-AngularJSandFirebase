@@ -88,24 +88,24 @@ public class Buy extends HttpServlet {
             String result = DoHttpRequest.executePost(urlTarget,urlParameters);
             if(result.equals("false")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login?message=Token is Invalid");
+                response.sendRedirect("Login?message=Token is Invalid");
                 return;
             } else if(result.equals("falseExpired")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login?message=Token is Expired");
+                response.sendRedirect("Login?message=Token is Expired");
                 return;
             } else if(result.equals("falseUserAgnet")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login?message=Token have been use in other browser");
+                response.sendRedirect("Login?message=Token have been use in other browser");
                 return;
             } else if(result.equals("falseIP")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login?message=Token have been use in other IP");
+                response.sendRedirect("Login?message=Token have been use in other IP");
                 return;
             }
         } else {
             session.invalidate();
-            response.sendRedirect("/JSP/Login");
+            response.sendRedirect("Login");
             return;
         }
         
@@ -155,24 +155,24 @@ public class Buy extends HttpServlet {
             String result = DoHttpRequest.executePost(urlTarget,urlParameters);
             if(result.equals("false")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login?message=Token is Invalid");
+                response.sendRedirect("Login?message=Token is Invalid");
                 return;
             } else if(result.equals("falseExpired")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login?message=Token is Expired");
+                response.sendRedirect("Login?message=Token is Expired");
                 return;
             } else if(result.equals("falseUserAgnet")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login?message=Token have been use in other browser");
+                response.sendRedirect("Login?message=Token have been use in other browser");
                 return;
             } else if(result.equals("falseIP")) {
                 session.invalidate();
-                response.sendRedirect("/JSP/Login?message=Token have been use in other IP");
+                response.sendRedirect("Login?message=Token have been use in other IP");
                 return;
             }
         } else {
             session.invalidate();
-            response.sendRedirect("/JSP/Login");
+            response.sendRedirect("Login");
             return;
         }
         String urlParameters;
@@ -198,14 +198,14 @@ public class Buy extends HttpServlet {
         String idProduk = request.getParameter("idProduk");
         String idPenjual = request.getParameter("idPenjual");
         if(action.equals("CANCEL")) {
-            response.sendRedirect("/JSP/Catalog"); 
+            response.sendRedirect("Catalog"); 
         } else {
             try {
                 String succes = buy(idProduk, namaProduk, gambar, idPembeli, namaPembeli, usernamePembeli, fullAddress, postalCode, phoneNumber, creditCard, codeVerification, kuantitas, initPrice, idPenjual, usernamePenjual);
             } catch (ClassNotFoundException_Exception | SQLException_Exception ex) {
                 Logger.getLogger(Buy.class.getName()).log(Level.SEVERE, null, ex);
             }
-            response.sendRedirect("/JSP/Purchases");
+            response.sendRedirect("Purchases");
         }
         
     }

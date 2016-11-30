@@ -73,7 +73,7 @@ public class Register extends HttpServlet {
                 request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
             } else {
                 session.setAttribute("token",result);
-                response.sendRedirect("/JSP/YourProduct");
+                response.sendRedirect("YourProduct");
             }
         } else {
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
@@ -125,7 +125,7 @@ public class Register extends HttpServlet {
         
         if(result.equals("false")) {
             session.invalidate();
-            response.sendRedirect("/JSP/Register");
+            response.sendRedirect("Register");
         } else {
             session.setAttribute("token",result);
             urlParameters = "token=" + URLEncoder.encode(result, "UTF-8");
@@ -158,7 +158,7 @@ public class Register extends HttpServlet {
             String username1 = DoHttpRequest.executePost(urlTarget,urlParameters);
             session.setAttribute("username",username1);
             System.out.print(username);
-            response.sendRedirect("/JSP/Catalog");
+            response.sendRedirect("Catalog");
         }
     }
 

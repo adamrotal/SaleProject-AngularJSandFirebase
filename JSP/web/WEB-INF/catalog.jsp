@@ -110,4 +110,6 @@
                 %>
                 
 	</div>
+        <script src="asset/js/firebase.js"></script>
+	<script src="asset/js/chat-handler.js"></script>
 </html>

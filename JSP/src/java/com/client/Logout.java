@@ -69,7 +69,7 @@ public class Logout extends HttpServlet {
             urlTarget = GeneralConstant.getURLRest("/RESTLogout");
             String result = DoHttpRequest.executePost(urlTarget,urlParameters);
         }
-        response.sendRedirect("/JSP/Login");
+        response.sendRedirect("Login");
     }
 
     /**

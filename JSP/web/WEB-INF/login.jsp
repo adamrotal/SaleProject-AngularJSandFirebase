@@ -24,7 +24,7 @@
                     <% out.print(message); %>
                 </div>
                 <% } %>
-                <form method="post" action="/JSP/Login">
+                <form method="post" action="Login">
 			<b>Email or Username</b>
 			<span id="requiredLoginEmail" class="tooltip">Required</span><br>
 			<input class="formValidation" type="text" name="email" oninput="inputValid('email', 'requiredLoginEmail')">
