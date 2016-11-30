@@ -17,6 +17,7 @@
         <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-sanitize.js"></script>-->
         <script type="text/javascript" src="asset/js/chat.js"></script>
         <script type="text/javascript" src="asset/js/ng-chat.js"></script>
+        <script type="text/javascript" src="asset/js/jquery.js"></script>
         
 	
 </head>
@@ -28,7 +29,7 @@
                     <button class="close" ng-click="chatShow=!chatShow">&#10006;</button>
             </div>
 
-            <div class="chatlogs" ng-bind-html="chatData">
+            <div id="chatData" class="chatlogs" ng-bind-html="chatData">
             </div>
             
             <form ng-submit="inputChat = null">
@@ -38,7 +39,7 @@
                 </div>
             </form>
         </div>
-    
+    <div id="usernameData" style="display:none" ng-init="selfUsername='<% out.print((String) request.getAttribute("username"));%>'"><% out.print((String) request.getAttribute("username"));%></div>
 	<div class="container">
 		<center>
 			<h1 class="logo">
